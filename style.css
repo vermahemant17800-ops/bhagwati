@@ -1,0 +1,5 @@
+style.css.card img {
+    width: 100%;
+    height: 300px; /* Sabhi photos ki height ek jaisi rakhein */
+    object-fit: cover; /* Is se photo khichegi nahi (stretch nahi hogi) */
+}

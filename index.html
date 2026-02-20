@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhagwati Handicraft | Premium Collection</title>
+    <style>
+        /* Design Styles */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #fffaf0; color: #4a0e0e; }
+        
+        .announcement { background: #800000; color: white; text-align: center; padding: 10px; font-size: 14px; font-weight: 500; }
+        
+        header { background: #fcebd7; padding: 30px; text-align: center; border-bottom: 1px solid #e0d0b0; position: sticky; top: 0; z-index: 1000; }
+        header h1 { margin: 0; font-size: 32px; letter-spacing: 3px; font-family: serif; }
+        header p { margin: 5px 0 0; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Grid for 15 Products */
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+        
+        /* Product Card */
+        .card { background: white; border: 1px solid #eee; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        .card img { 
+            width: 100%; 
+            height: 320px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+        
+        .card h3 { font-size: 18px; margin: 10px 0; font-weight: 600; color: #333; }
+        .price { font-size: 20px; font-weight: bold; color: #800000; margin-bottom: 15px; }
+        
+        .btn-buy { background: #f5d4af; border: none; color: #4a0e0e; padding: 12px; width: 100%; font-weight: bold; cursor: pointer; border-radius: 6px; font-size: 16px; transition: 0.2s; }
+        .btn-buy:hover { background: #eec494; }
+
+        footer { background: #fcebd7; padding: 50px 20px; text-align: center; margin-top: 60px; border-top: 1px solid #e0d0b0; }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000; display: flex; align-items: center; }
+    </style>
+</head>
+<body>
+
+    <div class="announcement">Free Shipping on orders    | Call/WhatsApp: 9458093471</div>
+
+    <header>
+        <div class="logo">
+            <h1>BHAGWATI HANDICRAFT</h1>
+            <p>Premium Brass Clutches & Handicrafts</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px; font-weight: normal; font-size: 28px;">Our Exclusive Collection</h2>
+        <div class="product-grid" id="product-list">
+            </div>
+    </div>
+
+    <footer>
+        <p><strong>Bhagwati Handicraft</strong></p>
+        <p>Hathras, Uttar Pradesh | 9458093471</p>
+        <p><a href="https://www.instagram.com/bhagwati_handicraft_" style="color: #800000; text-decoration: none;">Follow us on Instagram</a></p>
+        <p>© 1990 Bhagwati Handicraft</p>
+    </footer>
+
+    <a href="https://wa.me/9458093471" class="whatsapp-float" target="_blank">Chat with Us</a>
+
+    <script>
+        // Data for your 15 Products
+        const products = [
+            { name: "Noor Gold Clutch", price: "2800", img: "c1.jpeg" },
+            { name: "Kainat Silver", price: "1850", img: "c2.jpeg" },
+            { name: "Fiza Batua", price: "2800", img: "c3.jpeg" },
+            { name: "Royal Brass Box", price: "2100", img: "c4.jpeg" },
+            { name: "Antique Peacock", price: "1950", img: "c5.jpeg" },
+            { name: "Zari Velvet Potli", price: "1700", img: "c6.jpeg" },
+            { name: "Vintage Floral", price: "1800", img: "c7.jpeg" },
+            { name: "Golden Diva", price: "2200", img: "c8.jpeg" },
+            { name: "Silver Moonlight", price: "1750", img: "c9.jpeg" },
+            { name: "Bridal Special", price: "2500", img: "c10.jpeg" },
+            { name: "Ethnic Maharaja", price: "1900", img: "c11.jpeg" },
+            { name: "Sleek Party Wear", price: "1850", img: "c12.jpeg" },
+            { name: "Handcrafted Gem", price: "2300", img: "c13.jpeg" },
+            { name: "Classic Brass", price: "1850", img: "c14.jpeg" },
+            { name: "Designer Batua", price: "2800", img: "c15.jpeg" }
+        ];
+
+        const container = document.getElementById('product-list');
+
+        // Automatically generating 15 cards
+        products.forEach(p => {
+            container.innerHTML += `
+                <div class="card">
+                    <img src="${p.img}" alt="${p.name}">
+                    <h3>${p.name}</h3>
+                    <div class="price">Rs. ${p.price}</div>
+                    <button class="btn-buy" onclick="buyNow('${p.name}', '${p.price}')">Buy it now</button>
+                </div>
+            `;
+        });
+
+        function buyNow(name, price) {
+            const phoneNumber = "9458093471";
+            const message = `*NEW ORDER - BHAGWATI HANDICRAFT*%0A%0A*Product:* ${name}%0A*Price:* Rs. ${price}%0A%0APlease share details!`;
+            window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }
+    </script>
+</body>
+</html>
