@@ -59,22 +59,21 @@
     <script>
         // Images naming as per your new folder structure
         const products = [
-            { name: "Noor Gold Clutch", price: "2800", img: "c1.jpg" },
-            { name: "Kainat Silver", price: "1850", img: "c2.jpg" },
-            { name: "Fiza Batua", price: "2800", img: "c3.jpg" },
-            { name: "Royal Brass Box", price: "2100", img: "c4.jpg" },
-            { name: "Antique Peacock", price: "1950", img: "c5.jpg" },
-            { name: "Zari Velvet Potli", price: "1700", img: "c6.jpg" },
-            { name: "Kundan Special", price: "2400", img: "c7.jpg" },
-            { name: "Golden Diva", price: "2200", img: "c8.jpg" }
+            { name: "Noor Gold Clutch", price: "2800", img: "c1.jpeg" },
+            { name: "Kainat Silver", price: "1850", img: "c2.jpeg" },
+            { name: "Fiza Batua", price: "2800", img: "c3.jpeg" },
+            { name: "Royal Brass Box", price: "2100", img: "c4.jpeg" },
+            { name: "Antique Peacock", price: "1950", img: "c5.jpeg" },
+            { name: "Zari Velvet Potli", price: "1700", img: "c6.jpeg" },
+            { name: "Kundan Special", price: "2400", img: "c7.jpeg" },
+            { name: "Golden Diva", price: "2200", img: "c8.jpeg" }
         ];
 
         const grid = document.getElementById('product-list');
         products.forEach(p => {
             grid.innerHTML += `
                 <div class="card">
-                    <img src="${p.img}" alt="${p.name}" 
-                         onerror="this.onerror=null; this.src='${p.img.replace('.jpg', '.JPEG')}';">
+                    <img src="${p.img}" alt="${p.name}">
                     <h3>${p.name}</h3>
                     <div class="price">Rs. ${p.price}</div>
                     <button class="btn-buy" onclick="order('${p.name}')">Buy it now</button>
@@ -87,4 +86,4 @@
         }
     </script>
 </body>
-</html>
+</html>a
